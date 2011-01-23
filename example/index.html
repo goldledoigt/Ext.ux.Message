@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    	<link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-3.3.1/resources/css/ext-all.css"/>
+		<link rel="stylesheet" type="text/css" href="../src/Ext.ux.Message.css"/>
+
+		<!-- ExtJS -->
+    	<script type="text/javascript" src="http://extjs.cachefly.net/ext-3.3.1/adapter/ext/ext-base-debug.js"></script>
+    	<script type="text/javascript" src="http://extjs.cachefly.net/ext-3.3.1/ext-all-debug.js"></script>
+
+		<script type="text/javascript" src="../src/Ext.ux.Message.js"></script>
+		
+		<script>
+			Ext.onReady(function() {
+
+				var msg = Ext.ux.Message;
+
+				msg.init();
+
+				new Ext.Button({
+					text:"display info message"
+					,style:"margin:10px 0 0 10px"
+					,handler:function() {
+						msg.info("Info: button as been clicked");
+					}
+				}).render(document.body);
+
+				new Ext.Button({
+					text:"display warning message"
+					,style:"margin:10px 0 0 10px"
+					,handler:function() {
+						msg.warning("Warning: button as been clicked");
+					}
+				}).render(document.body);
+
+				new Ext.Button({
+					text:"display error message"
+					,style:"margin:10px 0 0 10px"
+					,handler:function() {
+						msg.error("Error: button as been clicked");
+					}
+				}).render(document.body);
+
+			});
+		</script>
+		
+	</head>
+
+	<body></body>
+
+</html>
