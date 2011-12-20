@@ -43,25 +43,26 @@ Ext.ux.Message = (function(config) {
 	function add(data) {
 		var box = el.insertHtml("beforeEnd", boxTpl.apply(data), true);
 		var inner = box.first();
-		inner.hide();
+        inner.setOpacity(0);
 		inner.fadeIn();
-		autoDestroy(box);
+        autoDestroy(box);
 	}
 
 	function autoDestroy(box) {
-		(function() {
+		Ext.defer(function() {
 			var inner = this.first();
 			inner.fadeOut({
 				scope:this
 				,callback:function() {
 					this.setHeight(0, {
+					    scope: this,
 						callback:function() {
-							this.remove();
+                            this.remove();
 						}
 					});
 				}
 			});
-		}).defer(config.boxDisplayTime, box);
+		}, config.boxDisplayTime, box);
 	}
 
 	return {

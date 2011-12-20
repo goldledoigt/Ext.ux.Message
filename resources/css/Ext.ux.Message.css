@@ -1,9 +1,8 @@
 .x-message {
-    xmargin-right:5px;
-    xmargin-top:3px;
     padding-right:2px;
 	z-index:10000;
 	right:0;
+	top: 0;
 	position:absolute;
 }
 
